@@ -20,16 +20,20 @@ console.log(concat);
  * contrainte:
  * - ne pas utiliser la méthode push
  */
-
-const push = (arr, item) => {}
+arr3 = [1, 2, 3];
+const1 = 4;
+const push = arr3.push(const1);
+console.log(arr3);
 
 /**
  * utiliser l'opérateur de composition ... afin de fusionner 2 objets passés en paramètres
  * 
  * ex: {a: 1, b: 2}, {c: 3, d: 4} => {a: 1, b: 2, c: 3, d: 4}
  */
-
-const merge = (obj1, obj2) => {}
+arr4 = {a: 1, b: 2};
+arr5 = {c: 3, d: 4};
+const merge = {...arr4,...arr5}
+console.log(merge);
 
 /**
  * utiliser l'opérateur de composition ... afin de modifier la propriété name de l'objet
@@ -39,8 +43,9 @@ const merge = (obj1, obj2) => {}
  * contrainte:
  *  - interdiction d'utiliser l'opérateur d'affectation "="
  */
-
-const setName = (obj, name) => {}
+arr6 = {name: 'toto'};
+const setName = {...arr6,name: 'titi'};
+console.log(setName);
 
 // astuce: {...obj} crée une copie de l'objet, c'est un des principes de l'immutabilité et évite les problèmes de référence
 module.exports = {concat, push, merge, setName}
