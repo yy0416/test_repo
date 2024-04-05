@@ -39,7 +39,7 @@ console.log(filterNameStartByA);
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
 array3 = [1,2,3];
-const sum = (array3.reduce((accumulateur, valeurCourante) => accumulateur + valeurCourante));
+const sum = (array3.reduce((acc, val) => acc + val,0));
 console.log(sum);
 
 /**
@@ -60,8 +60,15 @@ console.log(sum);
  *   - les mots clées function et return sont interdits
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
-
-const findUserById = (array, id) => {}
+const a = [
+    {id: 1, name: 'John'},
+    {id: 2, name: 'Doe'},
+    {id: 3, name: 'Foo'},
+   {id: 4, name: 'Bar'},
+   ];
+   
+const findUserById = (a,id)=> a.find(i=>i.id===id)?.name ?? null ;
+console.log(findUserById(a,3));
 
 
 module.exports = {multiplyByTwo, filterNameStartByA, sum, findUserById};
