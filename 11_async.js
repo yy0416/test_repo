@@ -11,13 +11,15 @@ const {sleep} = require("../test_repo/10_promise");
  *    - ne pas utiliser async await
  * 
  */
-console.log('start');
+
 const usingThen = async ()=>{
-    
-        
-        sleep().then();
-        console.log('fin');
-}
+    console.log('start');
+    sleep().then(
+        ()=>{console.log('fin');}
+    );
+};
+usingThen()
+    .then(()=>console.log("Test usingThen terminé"));
 
 
 /**
@@ -38,6 +40,9 @@ const usingAwait = async ()=>{
     console.log('fin');
 }
 
+usingAwait()
+    .then(()=> console.log("Test usingAwait terminé"));
+
 /**
  * Créez une fonction asynchrone qui effectue un appel api vers l'url passé en paramètre
  * retourne le résultat de la requête (body)
@@ -51,11 +56,26 @@ const usingAwait = async ()=>{
  */
 
 //décommentez la ligne suivante une fois le package installé
-//const axios = require("axios");
+const axios = require("axios");
 
 const apiResponse = async (url) => {
+    try{
+        const response = await axios.get(url);
+        return response.data;
+
+    }
+    catch(error){
+        console.error("Error",error);
+        throw error;
+
+    }
 
 }
+const url = "https://jsonplaceholder.typicode.com/todos/1";
+apiResponse(url)
+    .then(data=>console.log("Résultat de la requête API :", data))
+    .catch(error=>console.error("Erreur lors de la requête API :", error));
+
 
 
 module.exports = {usingThen, usingAwait, apiResponse};
