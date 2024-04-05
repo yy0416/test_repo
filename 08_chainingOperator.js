@@ -16,6 +16,13 @@
  * 
  */
 
+const a = {
+     name: "John",
+      group: {
+        name: "admin"
+      }
+      };
+
 const getGroupName = (obj) => {}
 
 module.exports = {getGroupName};
