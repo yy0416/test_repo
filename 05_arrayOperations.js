@@ -9,8 +9,10 @@
  *   - Vous ne pouvez pas utiliser de variable
  * 
   */
+array= [1,2,3,4,5];
+const multiplyByTwo = (array.map(x=>x*2));
 
-const multiplyByTwo = (array) => {}
+console.log(multiplyByTwo);
 
 
 /**
@@ -23,7 +25,9 @@ const multiplyByTwo = (array) => {}
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
 
-const filterNameStartByA = (array) => {}
+array2 = ["Ani","Bni","Cni","Animal"];
+const filterNameStartByA = (array2.filter(x=>x.startsWith("A")));
+console.log(filterNameStartByA);
 
 /**
  * Utiliser la fonction .reduce sur le tableau passé en paramètre
@@ -34,8 +38,9 @@ const filterNameStartByA = (array) => {}
  *   - les mots clées function et return sont interdits
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
-
-const sum = (array) => {}
+array3 = [1,2,3];
+const sum = (array3.reduce((accumulateur, valeurCourante) => accumulateur + valeurCourante));
+console.log(sum);
 
 /**
  * Utiliser la fonction .find sur le tableau passé en paramètre
