@@ -22,8 +22,8 @@ console.log(concat);
  */
 arr3 = [1, 2, 3];
 const1 = 4;
-const push = arr3.push(const1);
-console.log(arr3);
+const push = [...arr3,const1];
+console.log(push);
 
 /**
  * utiliser l'opérateur de composition ... afin de fusionner 2 objets passés en paramètres
