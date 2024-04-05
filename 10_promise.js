@@ -16,13 +16,6 @@ const sleep = () => {
 
 };
 
-const testSleep = async ()=>{
-    console.log('start');
-    await sleep();
-    console.log('fin');
 
-};
-
-testSleep();
 
 module.exports = {sleep};
