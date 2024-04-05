@@ -23,6 +23,7 @@ const a = {
       }
       };
 
-const getGroupName = (obj) => {}
+const getGroupName = a.group?.name??null;
+console.log(getGroupName);
 
 module.exports = {getGroupName};
